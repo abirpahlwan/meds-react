@@ -24,9 +24,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">My App</h1>
+      <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">MEDS</h1>
       
-      <div className="max-w-md mx-auto mb-8">
+      {/* Search Input */}
+      <div className="max-w-lg mx-auto mb-8">
         <div className="relative">
           <input
             type="text"
@@ -39,16 +40,20 @@ function App() {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {filteredCards.map((card, index) => (
-          <button
-            key={index}
-            className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center space-y-4 cursor-pointer"
-          >
-            {card.icon}
-            <h2 className="text-xl font-semibold text-gray-800">{card.title}</h2>
-          </button>
-        ))}
+      {/* Grid View */}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-2 gap-6 max-w- mx-auto">
+          {filteredCards.map((card, index) => (
+            // Cards
+            <button
+              key={index}
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center space-y-4 cursor-pointer  w-48 h-48"
+            >
+              {card.icon}
+              <h2 className="text-xl font-semibold text-gray-800">{card.title}</h2>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
